@@ -1,3 +1,9 @@
+## 0.2.0 (Unreleased)
+
+FEATURES:
+
+ * Outputs `vpc_id` for root module use
+
 ## 0.1.0 (April 14, 2016)
 
 FEATURES:

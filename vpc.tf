@@ -23,3 +23,7 @@ resource "aws_internet_gateway" "igw" {
     Project = "${var.tag_project}"
   }
 }
+
+output "vpc_id" {
+  value = "${aws_vpc.main.id}"
+}
