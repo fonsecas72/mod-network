@@ -3,6 +3,7 @@
 FEATURES:
 
  * Outputs `vpc_id` for root module use
+ * Added `lifecycle { create_before_destroy = true }` to public subnets
 
 ## 0.1.0 (April 14, 2016)
 

@@ -11,7 +11,7 @@ I advise against using this for any production applications. Consider this a fra
 Add the module resource into the `main.tf` file in your Terraform project.
 
 ``` hcl
-module "mod-network" {
+module "network" {
   source = "github.com/benmcrae/mod-network"
   tag_environment = "dev"
   tag_project = "my_first_project"

@@ -1,4 +1,6 @@
 resource "aws_subnet" "public" {
+  lifecycle { create_before_destroy = true }
+
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "${var.vpc_cidr_network}.${lookup(var.public_cidr_hosts, concat("zone", count.index))}"
   availability_zone = "${var.aws_region}${lookup(var.zones, concat("zone", count.index))}"
