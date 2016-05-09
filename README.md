@@ -24,9 +24,11 @@ Within the root project directory
 2. `terraform plan` - create execution plan
 3. `terraform apply` - apply changes
 
-### Resources
+*Currently `mod-network` requires an AWS Region with 3 Availability Zones or more.*
 
 ### Graph
+
+![Terraform Dependency Graph](assets/graph.png)
 
 ## Further use
 
