@@ -13,8 +13,8 @@ Add the module resource into the `main.tf` file in your Terraform project.
 ``` hcl
 module "network" {
   source = "github.com/benmcrae/mod-network?ref=v0.2.0"
-  tag_environment = "dev"
   tag_project = "my_first_project"
+  tag_environment = "dev"
 }
 ```
 
