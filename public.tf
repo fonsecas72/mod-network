@@ -2,13 +2,13 @@ resource "aws_subnet" "public" {
   lifecycle { create_before_destroy = true }
 
   vpc_id = "${aws_vpc.main.id}"
-  cidr_block = "${var.vpc_cidr_network}.${lookup(var.public_cidr_hosts, concat("zone", count.index))}"
-  availability_zone = "${var.aws_region}${lookup(var.zones, concat("zone", count.index))}"
+  cidr_block = "${var.vpc_cidr_network}.${lookup(var.public_cidr_hosts, format("%s%d", "zone", count.index))}"
+  availability_zone = "${var.aws_region}${lookup(var.zones, format("%s%d", "zone", count.index))}"
   map_public_ip_on_launch = true
   count = 3
 
   tags {
-    Name = "public_${lookup(var.zones, concat("zone", count.index))}.${var.tag_environment}"
+    Name = "public_${lookup(var.zones, format("%s%d", "zone", count.index))}.${var.tag_environment}"
     Environment = "${var.tag_environment}"
     Project = "${var.tag_project}"
   }
