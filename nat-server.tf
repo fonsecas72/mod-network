@@ -6,7 +6,7 @@ resource "aws_eip" "nat" {
 
 resource "aws_key_pair" "web-example-terraform" {
   key_name = "web-example"
-  public_key = "${file("ssh/id_rsa.pub")}"
+  public_key = "${file("${path.module}/ssh/id_rsa.pub")}"
 }
 
 resource "aws_instance" "nat" {
@@ -21,7 +21,7 @@ resource "aws_instance" "nat" {
   }
   connection {
     user = "ubuntu"
-    private_key = "${file("./ssh/id_rsa")}"
+    private_key = "${file("${path.module}/ssh/id_rsa")}"
   }
   provisioner "remote-exec" {
     inline = [
